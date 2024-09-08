@@ -93,6 +93,21 @@ a,
 body {
   display: flex;
   justify-content: flex-start;
+  height: 100vh;
+}
+
+/* CAMBIAMOS EL ALTO TOTAL DEL CONTENEDOR */
+.container-content{
+  height: 85vh !important;
+}
+
+.container-content > .container-fluid{
+  height: 85vh !important;
+}
+
+.table-responsive{
+  height: 100% !important;
+  max-height: 100% !important;
 }
 
 #app {
