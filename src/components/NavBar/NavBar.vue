@@ -19,8 +19,8 @@
         <!-- <b-nav-item>INICIO</b-nav-item> -->
         <!-- <BNavItemDropdown text="INICIO" right> -->
         <BNavItemDropdown text="INICIO">
-          <BDropdownItem :to="{name: 'companies'}">INDICADORES</BDropdownItem>
-          <BDropdownItem>BASES DE DATOS</BDropdownItem>
+          <BDropdownItem :to="{name: 'companies'}">COMPANIES</BDropdownItem>
+          <BDropdownItem :to="{name: 'categories'}">CATEGORIES</BDropdownItem>
           <BDropdownItem>MAPAS</BDropdownItem>
           <BDropdownItem>PUBLICACIONES</BDropdownItem>
           <BDropdownItem>NÚMEROS DE EMERGENCIA</BDropdownItem>

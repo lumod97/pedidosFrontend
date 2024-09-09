@@ -1,8 +1,8 @@
 <template>
-  <b-container fluid>
     <b-container class="h-100">
       <b-row class="h-100">
-        <b-col cols="6">
+        <!-- COMPANIES SECTION -->
+        <b-col cols="12">
           <b-card no-body class="h-100">
             <template #header>
               <div class="d-flex justify-content-between align-items-center">
@@ -20,7 +20,8 @@
             <companies-table ref="companies_table" @editCompany="editCompany" />
           </b-card>
         </b-col>
-        <b-col cols="6">
+        <!-- BRANCHES SECTION -->
+        <b-col cols="12" class="mt-3">
           <b-card no-body class="h-100">
             <template #header>
               <div class="d-flex justify-content-between align-items-center">
@@ -35,12 +36,12 @@
                 </b-button>
               </div>
             </template>
-            <branches-table ref="branches_table" @editBranch="editBranch"/>
-            <!-- <companies-table ref="companies_table" @editCompany="editCompany" /> -->
+            <branches-table ref="branches_table" @editBranch="editBranch" />
           </b-card>
         </b-col>
       </b-row>
-    </b-container>
+
+      <!-- MODALS -->
     <modal-company
       v-if="showCompanyModal"
       @hidden="toggleCompanyModal(false)"
@@ -48,8 +49,8 @@
       @edited="companySuccessfullySaved()"
       :isEdit="isEditCompany"
       :companyEdit="companyEdit"
-      />
-      <modal-branches
+    />
+    <modal-branches
       v-if="showBranchesModal"
       @hidden="toggleBranchesModal(false)"
       @saved="branchSuccessfullySaved()"
@@ -86,8 +87,8 @@ export default {
     // COMPANIES METHODS
     toggleCompanyModal(value) {
       this.showCompanyModal = value;
-      if(!value){
-        this.companyEdit = {}
+      if (!value) {
+        this.companyEdit = {};
         this.isEditCompany = false;
       }
     },
@@ -100,7 +101,7 @@ export default {
       this.showCompanyModal = false;
       this.refreshCompaniesTable();
       this.isEditCompany = false;
-      this.companyEdit = {}
+      this.companyEdit = {};
     },
     refreshCompaniesTable() {
       this.$refs.companies_table.$refs.table.refresh();
@@ -108,8 +109,8 @@ export default {
     // BRANCHES METHODS
     toggleBranchesModal(value) {
       this.showBranchesModal = value;
-      if(!value){
-        this.branchEdit = {}
+      if (!value) {
+        this.branchEdit = {};
         this.isEditBranch = false;
       }
     },
@@ -122,7 +123,7 @@ export default {
       this.showBranchesModal = false;
       this.refreshBranchesTable();
       this.isEditBranch = false;
-      this.branchEdit = {}
+      this.branchEdit = {};
     },
     refreshBranchesTable() {
       this.$refs.branches_table.$refs.table.refresh();

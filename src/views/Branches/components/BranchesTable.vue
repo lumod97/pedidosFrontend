@@ -70,7 +70,6 @@ export default {
       }
     },
     editBranch(branch) {
-      console.log(branch)
       this.$emit("editBranch", branch);
     },
     async deleteBranch(id_branch) {
