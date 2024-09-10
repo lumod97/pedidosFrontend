@@ -21,7 +21,7 @@
         <BNavItemDropdown text="INICIO">
           <BDropdownItem :to="{name: 'companies'}">COMPANIES</BDropdownItem>
           <BDropdownItem :to="{name: 'categories'}">CATEGORIES</BDropdownItem>
-          <BDropdownItem>MAPAS</BDropdownItem>
+          <BDropdownItem :to="{name: 'tables'}">MESAS</BDropdownItem>
           <BDropdownItem>PUBLICACIONES</BDropdownItem>
           <BDropdownItem>NÚMEROS DE EMERGENCIA</BDropdownItem>
         </BNavItemDropdown>
