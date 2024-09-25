@@ -11,6 +11,16 @@ export async function getTableCategories(params) {
     }
 }
 
+export async function getTableCategoriesForSelect(params) {
+    try {
+        const $data = await axios.post('table-categories/get-table-categories-for-select', params)
+        return $data
+    } catch (error) {
+        console.error('Error getting table-categories for select:', error);
+        throw error;
+    }
+}
+
 export async function insertTableCategory(params) {
     try {
         const $data = await axios.post('table-categories/insert-table-category', params)
@@ -43,6 +53,7 @@ export async function deleteTableCategory(params) {
 
 const services = {
     getTableCategories,
+    getTableCategoriesForSelect,
     insertTableCategory,
     deleteTableCategory,
     editTableCategory

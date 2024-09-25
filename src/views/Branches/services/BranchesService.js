@@ -11,6 +11,16 @@ export async function getBranches(params) {
     }
 }
 
+export async function getBranchesForSelect(params) {
+    try {
+        const $data = await axios.post('branches/get-branches-for-select', params)
+        return $data
+    } catch (error) {
+        console.error('Error getting branches for select:', error);
+        throw error;
+    }
+}
+
 export async function insertBranch(params) {
     try {
         const $data = await axios.post('branches/insert-branch', params)
@@ -43,6 +53,7 @@ export async function deleteBranch(params) {
 
 const services = {
     getBranches,
+    getBranchesForSelect,
     insertBranch,
     deleteBranch,
     editBranch
